@@ -56,24 +56,18 @@ print(users)
 # fecth values from filtered row dataframe cells &
 # get account_ID by passing userName as key to dictionary of userName/accountIds, users_accountIDs[username], users_accountIDs[row_df[]],
 employee     = users_accountIDs[users['Employee'].values[0]]
-Ssupervisor  = users_accountIDs[users['Supervisor'].values[0]]
 manager      = users_accountIDs[users['Manager'].values[0]]
-srManager    = users_accountIDs[users['Sr Manager'].values[0]]
 director     = users_accountIDs[users['Director'].values[0]]
 admin        = users_accountIDs[users['Admin'].values[0]]
-finance      = users_accountIDs[users['Finance'].values[0]]
-
 
 #update custom field as payload to be updated to jira
 payload = json.dumps( {
     "fields": {
-        #"customfield_10196": ceaAdmin,
-        "customfield_10197": [{"accountId": sourcing}],
-        "customfield_10198": [{"accountId": mananger1}],
-        "customfield_10199": [{"accountId": controller1}],
-        "customfield_10200": [{"accountId": mananger2}],
-        "customfield_10201": [{"accountId": controller2}],
-        "customfield_10292": [{"accountId": tfLeader}],
+        #"customfield_00001": ceaAdmin,
+        "customfield_00002": [{"accountId": employee}],
+        "customfield_00003": [{"accountId": manager}],
+        "customfield_00004": [{"accountId": director}],
+        "customfield_00005": [{"accountId": admin}],
         }
 })   
 
